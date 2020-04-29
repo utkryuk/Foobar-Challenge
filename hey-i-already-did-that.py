@@ -40,19 +40,17 @@ def s(n,b):
 	return subtract(x1,y1,b)
 
 def solution(n,b):
-	ans = 0
-	Dict = {}
+	temp = 0
+	arr = []
+	arr.append(n)
 	while 1:
 		temp = s(n,b)
-		if Dict.get(temp) == None:
-			print(temp)
-			Dict[temp] = 1
-			ans = ans + 1
+		if temp not in arr:
+			arr.append(temp)
 			n = temp
 		else:
 			break
-	return ans
-
+	return len(arr) - arr.index(temp)
 
 n = input()
 b = int(input())
